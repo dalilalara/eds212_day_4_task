@@ -1,0 +1,41 @@
+---
+title: "R-Exploring"
+author: "Dalila Lara"
+date: "2022-08-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(tidyverse)
+library(skimr)
+library(GGally)
+```
+
+```{r}
+#Exploring data set diamonds
+
+names(diamonds)
+dim(diamonds)
+summary(diamonds)
+head(diamonds)
+tail(diamonds)
+skimr::skim(diamonds)
+```
+
+```{r, eval=FALSE}
+ggpairs(diamonds)
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = carat, y = price)) + geom_point() + labs(title = "Diamonds price")
+```
+
+
+```{r}
+ggplot(data = diamonds, aes(x = carat)) + geom_histogram(aes(fill = price)) + labs(title = "Carats histogram")
+```
+
+         
+         
